@@ -1,0 +1,166 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Additional styles */
+@import 'additional-styles/utility-patterns.css';
+@import 'additional-styles/range-slider.css';
+@import 'additional-styles/toggle-switch.css';
+@import 'additional-styles/theme.css';
+
+@import 'tailwindcss/utilities';
+
+/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
+@layer utilities {
+    .rtl {
+        direction: rtl;
+    }
+}
+
+/* 全局样式 */
+body {
+  font-family: 'Inter', sans-serif;
+  /* 创建深色渐变背景 */
+  background: 
+    /* 顶部光晕效果 */
+    radial-gradient(circle at top left, 
+      rgba(147, 51, 234, 0.15) 0%, 
+      transparent 50%),
+    /* 底部光晕效果 */
+    radial-gradient(circle at bottom right,
+      rgba(236, 72, 153, 0.15) 0%, 
+      transparent 50%),
+    /* 主背景 */
+    hsl(240 10% 3.9%);
+  min-height: 100vh;
+  overscroll-behavior: none;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-500/50 rounded-full;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-400/50;
+}
+
+/* 文本选择效果 */
+::selection {
+  @apply bg-purple-500/30 text-white;
+}
+
+/* 全局动画效果 */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 玻璃态效果 */
+.glass-card {
+  @apply bg-gray-800/30 backdrop-blur-md border border-gray-700/50 
+         shadow-xl shadow-purple-500/5;
+}
+
+/* 霓虹文字效果 */
+.neon-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r 
+         from-purple-400 to-pink-500;
+  text-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+}
+
+/* 游戏风格按钮 */
+.game-button {
+  @apply relative px-6 py-3 rounded-lg font-medium text-white
+         bg-gradient-to-r from-purple-500 to-pink-500
+         hover:from-purple-600 hover:to-pink-600
+         active:from-purple-700 active:to-pink-700
+         transition-all duration-200
+         shadow-lg shadow-purple-500/25;
+}
+
+.game-button::before {
+  content: '';
+  @apply absolute inset-0 rounded-lg
+         bg-gradient-to-r from-purple-400 to-pink-400
+         opacity-0 transition-opacity duration-200;
+}
+
+.game-button:hover::before {
+  @apply opacity-20;
+}
+
+/* 卡片悬浮效果 */
+.hover-card {
+  @apply transition-all duration-300 ease-out
+         hover:transform hover:scale-105
+         hover:shadow-xl hover:shadow-purple-500/10;
+}
+
+/* 渐变边框效果 */
+.gradient-border {
+  @apply relative rounded-xl overflow-hidden;
+  &::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl
+           bg-gradient-to-r from-purple-500 to-pink-500
+           p-[1px];
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+/* 动态背景网格 */
+.grid-background {
+  background-image: 
+    linear-gradient(rgba(147, 51, 234, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 响应式容器 */
+.responsive-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* 游戏风格标题 */
+.game-title {
+  @apply text-4xl md:text-5xl font-bold
+         bg-clip-text text-transparent
+         bg-gradient-to-r from-purple-400 to-pink-500
+         leading-tight tracking-tight;
+}
+
+/* 游戏风格副标题 */
+.game-subtitle {
+  @apply text-xl md:text-2xl text-gray-400
+         leading-relaxed tracking-wide;
+}
+
+/* 在全局样式中添加 */
+.glass {
+  backdrop-filter: blur(10px);
+  background-color: rgba(17, 25, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}

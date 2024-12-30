@@ -1,0 +1,36 @@
+{
+  "common": {
+    "name": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "nav":{
+    "blog": "Blog"
+  },
+  "metadata":{
+    "title":"eggycor",
+    "description":"Navigate challenging tracks in Eggy Car, the unique physics game featuring egg-shaped vehicles. Collect coins, unlock new cars, and master the art of egg transportation!"
+  },
+  "cargamesunblocked":{
+    "title":"Eggy Car Unblocked",
+    "description":"Eggy Car Unblocked"
+  },
+  "gameslist":{
+    "title":"Eggy Car Unblocked"
+  },
+  "testimonials":{
+    "title":"What Players Are Saying About Eggy Car",
+    "desc":"Hear from some of our players who’ve taken the challenge."
+  },
+  "ShareModel":{
+    "title":"Eggy car",
+    "desc":"Where Physics Meets Egg-cellent Adventure!",
+    "k1":"eggycar",
+    "k2":"car game",
+    "k3":"eggycor",
+    "k4":"unblocked games"
+  },
+  "NotFound": {
+    "message": "Looks like your car took a wrong turn! This track doesn't exist, but don't worry - you can get back to the main race!",
+    "backHome": "Back to Home Track"
+  }
+}
